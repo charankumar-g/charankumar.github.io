@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- First Section -->
+    <section class="container">
+        <h1>CHARAN KUMAR G'S <BR>PORTFOLIO</h1>
+        <h2 class="subheading">DATA ANALYST</h2>
+        <h4>Motivated Data Analyst with a strong proficiency in SQL, Tableau, Python, and Microsoft Excel.</h4>
+        <p>
+            Feel free to reach out and connect with me on 
+            <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" style="color: #0077b5; font-weight: bold; text-decoration: none;">
+                LinkedIn
+            </a>.
+        </p>
+        
+        <!-- Scroll Arrow -->
+        <div id="scrollArrow" class="arrow">↓</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 id="projectsHeading">PROJECTS</h2>
+        <p>Following are the projects which helped me explore Data Analytics. Please feel free to explore them.</p>
+
+        <div class="projects-grid">
+            
+            <div class="project">
+                <h3>AI’s Impact on Data Analyst Jobs in India</h3>
+                <img src="images/AI’s Impact.png" alt="AI’s Impact on Data Analyst Jobs in India">
+                <p class="project-description">
+                    This project focuses on how AI is significantly impacting Data Analyst job trends in India.
+                    It highlights AI vs Non-AI job demand, emerging key skills, salary differences, and top hiring locations.            </p>
+                <a href="https://public.tableau.com/views/AIsImpactonDataAnalystJobsinIndia/AIImpact-DataAnalystJobMarketIndia?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+            <div class="project">
+                <h3>STOCK MARKET-REDDIT SENTIMENT ANALYSIS</h3>
+                <img src="images/reddit_sentiment.jpg" alt="Reddit Sentiment Analysis">
+                <p class="project-description">
+                    This project leverages web scraping to extract stock market discussions from Reddit using the Reddit API (PRAW). NLP techniques analyze user sentiment, categorizing it as positive, negative, or neutral. The project also visualizes sentiment trends to identify market patterns.
+                </p>
+                <a href="https://github.com/charankumar-g/Reddit-Sentiment-Analysis" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+            
+            <div class="project">
+                <h3>HR ANALYTICS DASHBOARD</h3>
+                <img src="images/HR ANALYTICS DASHBOARD.png" alt="HR Analytics Dashboard">
+                <p class="project-description">
+                    This project focuses on analyzing employee performance, attrition, and satisfaction trends.
+                    It provides insights into department-wise attrition, age group distribution, and job satisfaction levels using interactive visuals.                </p>
+                <a href="https://public.tableau.com/views/HRANALYTICSDASHBOARD_17440111384270/HRANALYTICSDASHBOARD?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+            <div class="project">
+                <h3>SWIGGY SALES - SQL CASE STUDY</h3>
+                <img src="images/swiggy.jpg" alt="Swiggy Dashboard">
+                <p class="project-description">
+                    In this SQL project, I analyzed a Swiggy restaurant dataset to extract insights on restaurant distributions, ratings, costs, and cuisines. Using advanced SQL queries, I uncovered trends in restaurant counts, top-rated spots, pricing, and more, showcasing strong data exploration skills.                        </p>
+                <a href="https://github.com/charankumar-g/swiggy/blob/main/README.md" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+
+            <div class="project">
+                <h3>EMPLOYEE ATTRITION ANALYSIS</h3>
+                <img src="images/hr_attrition.jpg" alt="HR Attrition Analysis">
+                <p class="project-description">
+                    This project analyzes HR data to uncover key factors influencing employee attrition. Using data visualization and machine learning, it identifies trends such as job roles, salaries, and work-life balance affecting employee turnover.
+                </p>
+                <a href="https://github.com/charankumar-g/-HR-Attrition-Analysis" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+            
+            <div class="project">
+                <h3>INTERNSHIP PROJECT : ONLINE RETAIL STORE ANALYSIS</h3>
+                <img src="images/Online Retail.png" alt="Customer Retention Analysis">
+                <p class="project-description">
+                    This project focuses on analyzing online retail store data to understand customer behavior. Using Tableau, I created various fields and dashboards to track revenue trends, product performance, and customer segments. The project helped me identify patterns, predict churn, and suggest strategies for customer retention.                </p>
+                <a href="https://public.tableau.com/views/OnlineRetailStoreAnalysis_17440110418940/OnlineRetailStoreAnalysis?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="view-project" target="_blank">VIEW PROJECT</a>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>
+
+<script>
+    document.getElementById("scrollArrow").addEventListener("click", function() {
+        document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+    });
+</script>
+
+<!-- Footer Section --><footer id="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <p><strong>Email:</strong> charankumar.career@gmail.com</p>
+        </div>
+        <div class="footer-content social-section">
+            <p><strong>Social:</strong></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/charankumar-g" target="_blank">
+                    <img src="images/github.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 1rem; margin-top: 15px;">
+            Designed & Developed by <strong class="charan-glow">Charan</strong>
+        </p>
+        
+        
+    </div>
+</footer>
