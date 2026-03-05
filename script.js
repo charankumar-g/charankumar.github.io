@@ -1,165 +1,132 @@
 /* ================================================================
    CHARAN KUMAR G — PORTFOLIO SCRIPTS
-   Premium White Edition
    ================================================================ */
-
 (function () {
     'use strict';
 
-    /* ── PAGE REVEAL ── */
-    // Guarantee page is always visible — no blank screen
+    /* ── SAFE PAGE REVEAL ── */
     document.documentElement.style.opacity = '0';
     document.documentElement.style.transition = 'opacity 0.5s ease';
+    const show = () => { document.documentElement.style.opacity = '1'; };
+    window.addEventListener('load', show);
+    setTimeout(show, 1200);
 
-    const showPage = () => {
-        document.documentElement.style.opacity = '1';
-    };
-    window.addEventListener('load', showPage);
-    setTimeout(showPage, 1200); // Failsafe
-
-    /* ── NAV SCROLL ── */
+    /* ── NAV ── */
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
     /* ── SCROLL ARROW ── */
-    const scrollArrow = document.getElementById('scrollArrow');
-    if (scrollArrow) {
-        scrollArrow.addEventListener('click', () => {
-            document.getElementById('projects')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    }
+    document.getElementById('scrollArrow')?.addEventListener('click', () => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    });
 
-    /* ── SMOOTH ANCHOR SCROLL ── */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            const target = document.querySelector(href);
-            if (target) {
+    /* ── SMOOTH ANCHORS ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t && a.getAttribute('href') !== '#') {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                t.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    /* ── HERO REVEAL (above fold) ── */
-    // Fire immediately after DOM is ready
-    const fireHeroReveal = () => {
+    /* ── HERO REVEAL ── */
+    const heroReveal = () => {
         document.querySelectorAll('.hero .reveal').forEach(el => {
-            const delay = parseInt(el.dataset.delay || 0);
-            setTimeout(() => el.classList.add('visible'), delay + 200);
+            setTimeout(() => el.classList.add('visible'),
+                parseInt(el.dataset.delay || 0) + 200);
         });
     };
+    document.readyState === 'loading'
+        ? document.addEventListener('DOMContentLoaded', heroReveal)
+        : heroReveal();
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fireHeroReveal);
-    } else {
-        fireHeroReveal();
-    }
-
-    /* ── INTERSECTION OBSERVER: REVEAL ── */
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = parseInt(entry.target.dataset.delay || 0);
-                setTimeout(() => entry.target.classList.add('visible'), delay);
-                revealObserver.unobserve(entry.target);
+    /* ── INTERSECTION REVEAL ── */
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add('visible'),
+                    parseInt(e.target.dataset.delay || 0));
+                io.unobserve(e.target);
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    // Observe all non-hero reveal elements
-    document.querySelectorAll('.work .reveal, .footer .reveal').forEach(el => {
-        revealObserver.observe(el);
-    });
+    document.querySelectorAll('.sec-head .reveal, .footer .reveal').forEach(el => io.observe(el));
 
-    /* ── STAGGERED CARD REVEAL ── */
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const cards = entry.target.querySelectorAll('.reveal-card');
-                cards.forEach((card, i) => {
-                    setTimeout(() => card.classList.add('visible'), i * 110);
+    // Section header
+    const secHead = document.querySelector('.sec-head');
+    if (secHead) {
+        const secIO = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); secIO.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        secHead.classList.add('reveal');
+        secIO.observe(secHead);
+    }
+
+    /* ── CARD STAGGER ── */
+    const cardIO = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.querySelectorAll('.reveal-card').forEach((c, i) => {
+                    setTimeout(() => c.classList.add('visible'), i * 100);
                 });
-                cardObserver.unobserve(entry.target);
+                cardIO.unobserve(e.target);
             }
         });
-    }, { threshold: 0.06 });
+    }, { threshold: 0.05 });
 
-    document.querySelectorAll('.work-inner').forEach(el => cardObserver.observe(el));
+    document.querySelectorAll('.card-row, .card-wide').forEach(el => cardIO.observe(el));
 
-    // Also observe individual featured cards outside grids
-    document.querySelectorAll('.pcard-featured.reveal-card').forEach(card => {
-        const cardSingle = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    cardSingle.unobserve(entry.target);
-                }
+    // Also observe solo featured cards
+    document.querySelectorAll('.card.card-wide.reveal-card').forEach(card => {
+        const solo = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); solo.unobserve(e.target); }
             });
         }, { threshold: 0.08 });
-        cardSingle.observe(card);
+        solo.observe(card);
     });
 
-    /* ── CARD 3D TILT ── */
-    document.querySelectorAll('.pcard').forEach(card => {
+    /* ── CARD TILT ── */
+    document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width  - 0.5;
-            const y = (e.clientY - rect.top)  / rect.height - 0.5;
-            const rotX = y * -3;
-            const rotY = x *  4;
-            card.style.transform = `translateY(-8px) perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width  - 0.5;
+            const y = (e.clientY - r.top)  / r.height - 0.5;
+            card.style.transform = `translateY(-7px) perspective(900px) rotateX(${y * -3}deg) rotateY(${x * 4}deg)`;
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
 
-    /* ── CUSTOM CURSOR ── */
+    /* ── CURSOR ── */
     if (window.matchMedia('(pointer: fine)').matches) {
-        const cursor = document.getElementById('cursor');
-        const ring   = document.getElementById('cursorRing');
-
-        if (cursor && ring) {
+        const cur  = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        if (cur && ring) {
             let mx = 0, my = 0, rx = 0, ry = 0;
-
             document.addEventListener('mousemove', e => {
-                mx = e.clientX;
-                my = e.clientY;
-                cursor.style.left = mx + 'px';
-                cursor.style.top  = my + 'px';
+                mx = e.clientX; my = e.clientY;
+                cur.style.left = mx + 'px';
+                cur.style.top  = my + 'px';
             });
-
-            const animRing = () => {
+            (function loop() {
                 rx += (mx - rx) * 0.1;
                 ry += (my - ry) * 0.1;
                 ring.style.left = rx + 'px';
                 ring.style.top  = ry + 'px';
-                requestAnimationFrame(animRing);
-            };
-            animRing();
-
-            document.querySelectorAll('a, button, .pcard, .scroll-cue').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursor.classList.add('expand');
-                    ring.classList.add('expand');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('expand');
-                    ring.classList.remove('expand');
-                });
+                requestAnimationFrame(loop);
+            })();
+            document.querySelectorAll('a, button, .card, .scroll-hint').forEach(el => {
+                el.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big'); });
+                el.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
             });
         }
-    }
-
-    /* ── WORK HEADER REVEAL ── */
-    const workHeader = document.querySelector('.work-header');
-    if (workHeader) {
-        revealObserver.observe(workHeader);
     }
 
 })();
