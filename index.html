@@ -7,302 +7,277 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Noise overlay -->
-    <div class="noise-overlay"></div>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">CK<span>.</span></a>
-            <div class="nav-links">
-                <a href="#projects" class="nav-link">Projects</a>
+            <div class="nav-center">
+                <a href="#projects" class="nav-link">Work</a>
                 <a href="#footer" class="nav-link">Contact</a>
-                <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="nav-cta">Hire Me ↗</a>
             </div>
+            <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="nav-cta">
+                <span class="cta-dot"></span> Open to Work
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
 
-        <!-- Background orbs -->
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-
-        <!-- Floating grid lines -->
-        <div class="grid-lines"></div>
-
-        <div class="hero-content">
-            <div class="hero-badge reveal-up" data-delay="0">
-                <span class="badge-dot"></span>
-                Available for Opportunities
+        <div class="hero-inner">
+            <div class="hero-eyebrow reveal" data-delay="0">
+                <span class="eyebrow-bar"></span>
+                Business Analyst &amp; Web Developer
             </div>
 
-            <h1 class="hero-title reveal-up" data-delay="100">
-                <span class="title-line">CHARAN</span>
-                <span class="title-line accent-line">KUMAR G</span>
+            <h1 class="hero-headline reveal" data-delay="120">
+                <span class="hl-row">Turning data</span>
+                <span class="hl-row hl-italic">into decisions,</span>
+                <span class="hl-row">ideas into</span>
+                <span class="hl-row hl-gradient">products.</span>
             </h1>
 
-            <div class="hero-role reveal-up" data-delay="200">
-                <span class="role-text" id="roleText">Business Analyst</span>
-                <span class="role-divider">|</span>
-                <span class="role-text">Web Developer</span>
-            </div>
-
-            <p class="hero-desc reveal-up" data-delay="300">
+            <p class="hero-sub reveal" data-delay="260">
                 Analytical thinker with deep expertise in SQL, Tableau, Python, and full-stack development.
                 I transform complex data into strategic decisions and build digital experiences that matter.
             </p>
 
-            <div class="hero-actions reveal-up" data-delay="400">
+            <div class="hero-actions reveal" data-delay="360">
                 <a href="#projects" class="btn-primary">
-                    <span>View Projects</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    View Projects
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+                <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="btn-ghost">
+                    LinkedIn ↗
+                </a>
             </div>
 
-            <div class="hero-stats reveal-up" data-delay="500">
-                <div class="stat">
-                    <span class="stat-num">6+</span>
-                    <span class="stat-label">Projects</span>
+            <div class="hero-stats reveal" data-delay="460">
+                <div class="stat-item">
+                    <span class="stat-n">6</span>
+                    <span class="stat-l">Projects</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">4+</span>
-                    <span class="stat-label">Tools</span>
+                <span class="stat-div"></span>
+                <div class="stat-item">
+                    <span class="stat-n">4+</span>
+                    <span class="stat-l">Core Tools</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-label">Passion</span>
+                <span class="stat-div"></span>
+                <div class="stat-item">
+                    <span class="stat-n">∞</span>
+                    <span class="stat-l">Curiosity</span>
                 </div>
             </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator" id="scrollArrow">
-            <span class="scroll-text">Scroll</span>
-            <div class="scroll-line">
-                <div class="scroll-dot"></div>
-            </div>
+        <div class="scroll-cue" id="scrollArrow">
+            <div class="scroll-track"><div class="scroll-pill"></div></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- Skills ticker -->
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span>SQL</span><span class="ticker-dot">✦</span>
-            <span>Tableau</span><span class="ticker-dot">✦</span>
-            <span>Python</span><span class="ticker-dot">✦</span>
-            <span>Excel</span><span class="ticker-dot">✦</span>
-            <span>Data Analytics</span><span class="ticker-dot">✦</span>
-            <span>Business Intelligence</span><span class="ticker-dot">✦</span>
-            <span>NLP</span><span class="ticker-dot">✦</span>
-            <span>Machine Learning</span><span class="ticker-dot">✦</span>
-            <span>HTML / CSS</span><span class="ticker-dot">✦</span>
-            <span>JavaScript</span><span class="ticker-dot">✦</span>
-            <span>SQL</span><span class="ticker-dot">✦</span>
-            <span>Tableau</span><span class="ticker-dot">✦</span>
-            <span>Python</span><span class="ticker-dot">✦</span>
-            <span>Excel</span><span class="ticker-dot">✦</span>
-            <span>Data Analytics</span><span class="ticker-dot">✦</span>
-            <span>Business Intelligence</span><span class="ticker-dot">✦</span>
-            <span>NLP</span><span class="ticker-dot">✦</span>
-            <span>Machine Learning</span><span class="ticker-dot">✦</span>
-            <span>HTML / CSS</span><span class="ticker-dot">✦</span>
-            <span>JavaScript</span><span class="ticker-dot">✦</span>
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>SQL</span><em>·</em>
+            <span>Tableau</span><em>·</em>
+            <span>Python</span><em>·</em>
+            <span>Excel</span><em>·</em>
+            <span>Data Analytics</span><em>·</em>
+            <span>Business Intelligence</span><em>·</em>
+            <span>NLP</span><em>·</em>
+            <span>Machine Learning</span><em>·</em>
+            <span>HTML / CSS</span><em>·</em>
+            <span>JavaScript</span><em>·</em>
+            <span>SQL</span><em>·</em>
+            <span>Tableau</span><em>·</em>
+            <span>Python</span><em>·</em>
+            <span>Excel</span><em>·</em>
+            <span>Data Analytics</span><em>·</em>
+            <span>Business Intelligence</span><em>·</em>
+            <span>NLP</span><em>·</em>
+            <span>Machine Learning</span><em>·</em>
+            <span>HTML / CSS</span><em>·</em>
+            <span>JavaScript</span><em>·</em>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="section-inner">
-            <div class="section-header">
-                <p class="section-label reveal-up">Selected Work</p>
-                <h2 class="section-title reveal-up">Projects that<br><em>move the needle</em></h2>
-                <p class="section-sub reveal-up">Explore data-driven projects spanning business intelligence, machine learning, and web analytics.</p>
+    <!-- Projects -->
+    <section id="projects" class="work">
+        <div class="work-inner">
+
+            <header class="work-header reveal">
+                <p class="work-eyebrow">Selected Work</p>
+                <h2 class="work-title">Projects that<br><em>move the needle</em></h2>
+                <p class="work-sub">Explore data-driven projects spanning business intelligence, machine learning, and web analytics.</p>
+            </header>
+
+            <!-- Featured Project 1 -->
+            <article class="pcard pcard-featured reveal-card">
+                <div class="pcard-img-wrap">
+                    <img src="images/AI's Impact.png" alt="AI's Impact on Data Analyst Jobs in India" loading="lazy" class="pcard-img">
+                    <div class="pcard-overlay">
+                        <a href="https://public.tableau.com/views/AIsImpactonDataAnalystJobsinIndia/AIImpact-DataAnalystJobMarketIndia?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-overlay-btn">
+                            Open Project
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="pcard-content">
+                    <div class="ptags">
+                        <span class="ptag">Tableau</span>
+                        <span class="ptag">Business Intelligence</span>
+                    </div>
+                    <h3 class="pcard-title">AI's Impact on Data Analyst Jobs in India</h3>
+                    <p class="pcard-desc">This project focuses on how AI is significantly impacting Data Analyst job trends in India. It highlights AI vs Non-AI job demand, emerging key skills, salary differences, and top hiring locations.</p>
+                    <a href="https://public.tableau.com/views/AIsImpactonDataAnalystJobsinIndia/AIImpact-DataAnalystJobMarketIndia?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-cta">
+                        View Project
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Grid Row -->
+            <div class="pcard-grid">
+                <article class="pcard reveal-card">
+                    <div class="pcard-img-wrap">
+                        <img src="images/reddit_sentiment.jpg" alt="Reddit Sentiment Analysis" loading="lazy" class="pcard-img">
+                        <div class="pcard-overlay">
+                            <a href="https://github.com/charankumar-g/Reddit-Sentiment-Analysis" target="_blank" class="pcard-overlay-btn">Open Project <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="pcard-content">
+                        <div class="ptags"><span class="ptag">Python</span><span class="ptag">NLP</span></div>
+                        <h3 class="pcard-title">Stock Market — Reddit Sentiment Analysis</h3>
+                        <p class="pcard-desc">Leverages web scraping to extract stock market discussions from Reddit using PRAW. NLP techniques analyze user sentiment, categorizing it as positive, negative, or neutral to identify market patterns.</p>
+                        <a href="https://github.com/charankumar-g/Reddit-Sentiment-Analysis" target="_blank" class="pcard-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="pcard reveal-card">
+                    <div class="pcard-img-wrap">
+                        <img src="images/HR ANALYTICS DASHBOARD.png" alt="HR Analytics Dashboard" loading="lazy" class="pcard-img">
+                        <div class="pcard-overlay">
+                            <a href="https://public.tableau.com/views/HRANALYTICSDASHBOARD_17440111384270/HRANALYTICSDASHBOARD?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-overlay-btn">Open Project <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="pcard-content">
+                        <div class="ptags"><span class="ptag">Tableau</span><span class="ptag">HR Analytics</span></div>
+                        <h3 class="pcard-title">HR Analytics Dashboard</h3>
+                        <p class="pcard-desc">Analyzes employee performance, attrition, and satisfaction trends. Provides insights into department-wise attrition, age group distribution, and job satisfaction levels using interactive visuals.</p>
+                        <a href="https://public.tableau.com/views/HRANALYTICSDASHBOARD_17440111384270/HRANALYTICSDASHBOARD?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                    </div>
+                </article>
             </div>
 
-            <div class="projects-grid">
-
-                <!-- Project 1 - Featured/Large -->
-                <div class="project-card project-featured reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/AIs-Impact.png" alt="AI's Impact on Data Analyst Jobs in India" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://public.tableau.com/views/AIsImpactonDataAnalystJobsinIndia/AIImpact-DataAnalystJobMarketIndia?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-link-btn" target="_blank">
-                                Open Project ↗
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Business Intelligence</span>
-                        </div>
-                        <h3 class="card-title">AI's Impact on Data Analyst Jobs in India</h3>
-                        <p class="card-desc">This project focuses on how AI is significantly impacting Data Analyst job trends in India. It highlights AI vs Non-AI job demand, emerging key skills, salary differences, and top hiring locations.</p>
-                        <a href="https://public.tableau.com/views/AIsImpactonDataAnalystJobsinIndia/AIImpact-DataAnalystJobMarketIndia?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
+            <!-- Featured Project 4 -->
+            <article class="pcard pcard-featured pcard-rev reveal-card">
+                <div class="pcard-img-wrap">
+                    <img src="images/Swiggy.jpg" alt="Swiggy SQL Case Study" loading="lazy" class="pcard-img">
+                    <div class="pcard-overlay">
+                        <a href="https://github.com/charankumar-g/swiggy/blob/main/README.md" target="_blank" class="pcard-overlay-btn">Open Project <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="project-card reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/reddit_sentiment.jpg" alt="Reddit Sentiment Analysis" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://github.com/charankumar-g/Reddit-Sentiment-Analysis" class="card-link-btn" target="_blank">Open Project ↗</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">NLP</span>
-                        </div>
-                        <h3 class="card-title">Stock Market — Reddit Sentiment Analysis</h3>
-                        <p class="card-desc">Leverages web scraping to extract stock market discussions from Reddit using PRAW. NLP techniques analyze user sentiment, categorizing it as positive, negative, or neutral to identify market patterns.</p>
-                        <a href="https://github.com/charankumar-g/Reddit-Sentiment-Analysis" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
+                <div class="pcard-content">
+                    <div class="ptags"><span class="ptag">SQL</span><span class="ptag">Case Study</span></div>
+                    <h3 class="pcard-title">Swiggy Restaurant — SQL Case Study</h3>
+                    <p class="pcard-desc">Analyzed a Swiggy restaurant dataset to extract insights on distributions, ratings, costs, and cuisines. Using advanced SQL queries, uncovered trends in restaurant counts, top-rated spots, and pricing.</p>
+                    <a href="https://github.com/charankumar-g/swiggy/blob/main/README.md" target="_blank" class="pcard-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
                 </div>
+            </article>
 
-                <!-- Project 3 -->
-                <div class="project-card reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/HR ANALYTICS DASHBOARD.png" alt="HR Analytics Dashboard" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://public.tableau.com/views/HRANALYTICSDASHBOARD_17440111384270/HRANALYTICSDASHBOARD?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-link-btn" target="_blank">Open Project ↗</a>
+            <!-- Grid Row 2 -->
+            <div class="pcard-grid">
+                <article class="pcard reveal-card">
+                    <div class="pcard-img-wrap">
+                        <img src="images/hr_attrition.jpg" alt="Employee Attrition Analysis" loading="lazy" class="pcard-img">
+                        <div class="pcard-overlay">
+                            <a href="https://github.com/charankumar-g/-HR-Attrition-Analysis" target="_blank" class="pcard-overlay-btn">Open Project <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">HR Analytics</span>
-                        </div>
-                        <h3 class="card-title">HR Analytics Dashboard</h3>
-                        <p class="card-desc">Analyzes employee performance, attrition, and satisfaction trends. Provides insights into department-wise attrition, age group distribution, and job satisfaction levels using interactive visuals.</p>
-                        <a href="https://public.tableau.com/views/HRANALYTICSDASHBOARD_17440111384270/HRANALYTICSDASHBOARD?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
+                    <div class="pcard-content">
+                        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Machine Learning</span></div>
+                        <h3 class="pcard-title">Employee Attrition Analysis</h3>
+                        <p class="pcard-desc">Analyzes HR data to uncover key factors influencing employee attrition. Using data visualization and machine learning, identifies trends in job roles, salaries, and work-life balance affecting turnover.</p>
+                        <a href="https://github.com/charankumar-g/-HR-Attrition-Analysis" target="_blank" class="pcard-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Project 4 -->
-                <div class="project-card reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/Swiggy.jpg" alt="Swiggy SQL Case Study" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://github.com/charankumar-g/swiggy/blob/main/README.md" class="card-link-btn" target="_blank">Open Project ↗</a>
+                <article class="pcard reveal-card">
+                    <div class="pcard-img-wrap">
+                        <img src="images/Online Retail.png" alt="Online Retail Store Analysis" loading="lazy" class="pcard-img">
+                        <div class="pcard-overlay">
+                            <a href="https://public.tableau.com/views/OnlineRetailStoreAnalysis_17440110418940/OnlineRetailStoreAnalysis?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-overlay-btn">Open Project <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2H11V11M11 2L2 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">SQL</span>
-                            <span class="tag">Case Study</span>
-                        </div>
-                        <h3 class="card-title">Swiggy Restaurant — SQL Case Study</h3>
-                        <p class="card-desc">Analyzed a Swiggy restaurant dataset to extract insights on distributions, ratings, costs, and cuisines. Using advanced SQL queries, uncovered trends in restaurant counts, top-rated spots, and pricing.</p>
-                        <a href="https://github.com/charankumar-g/swiggy/blob/main/README.md" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
+                    <div class="pcard-content">
+                        <div class="ptags"><span class="ptag">Tableau</span><span class="ptag">Retail Analytics</span><span class="ptag">Internship</span></div>
+                        <h3 class="pcard-title">Internship Project: Online Retail Store Analysis</h3>
+                        <p class="pcard-desc">Analyzes online retail store data to understand customer behavior. Using Tableau, created dashboards to track revenue trends, product performance, and customer segments — identifying patterns to predict churn and suggest retention strategies.</p>
+                        <a href="https://public.tableau.com/views/OnlineRetailStoreAnalysis_17440110418940/OnlineRetailStoreAnalysis?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="pcard-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
                     </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/hr_attrition.jpg" alt="Employee Attrition Analysis" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://github.com/charankumar-g/-HR-Attrition-Analysis" class="card-link-btn" target="_blank">Open Project ↗</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                        </div>
-                        <h3 class="card-title">Employee Attrition Analysis</h3>
-                        <p class="card-desc">Analyzes HR data to uncover key factors influencing employee attrition. Using data visualization and machine learning, identifies trends in job roles, salaries, and work-life balance affecting turnover.</p>
-                        <a href="https://github.com/charankumar-g/-HR-Attrition-Analysis" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6 - Featured/Large -->
-                <div class="project-card project-featured reveal-card">
-                    <div class="card-image-wrap">
-                        <img src="images/Online Retail.png" alt="Online Retail Store Analysis" class="card-img">
-                        <div class="card-overlay">
-                            <a href="https://public.tableau.com/views/OnlineRetailStoreAnalysis_17440110418940/OnlineRetailStoreAnalysis?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-link-btn" target="_blank">Open Project ↗</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Internship</span>
-                            <span class="tag">Retail Analytics</span>
-                        </div>
-                        <h3 class="card-title">Internship Project: Online Retail Store Analysis</h3>
-                        <p class="card-desc">Analyzes online retail store data to understand customer behavior. Using Tableau, created dashboards to track revenue trends, product performance, and customer segments — identifying patterns to predict churn and suggest retention strategies.</p>
-                        <a href="https://public.tableau.com/views/OnlineRetailStoreAnalysis_17440110418940/OnlineRetailStoreAnalysis?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="card-cta" target="_blank">
-                            <span>VIEW PROJECT</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-
+                </article>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="footer">
         <div class="footer-inner">
-            <div class="footer-glow"></div>
-
             <div class="footer-top">
                 <div class="footer-left">
-                    <p class="footer-label">Get in touch</p>
-                    <h2 class="footer-headline">Let's build something<br><em>extraordinary</em></h2>
+                    <p class="footer-eyebrow">Get in touch</p>
+                    <h2 class="footer-headline">
+                        Let's build something<br><em>extraordinary.</em>
+                    </h2>
                     <a href="mailto:charankumar.career@gmail.com" class="footer-email">
                         charankumar.career@gmail.com
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
                 </div>
-
                 <div class="footer-right">
                     <p class="footer-connect-label">Connect</p>
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="social-link">
-                            <img src="images/linkedin.png" alt="LinkedIn">
-                            <span>LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/charan-kumar-g/" target="_blank" class="social-card">
+                            <div class="social-icon-box">
+                                <img src="images/linkedin.png" alt="LinkedIn">
+                            </div>
+                            <div class="social-text">
+                                <span class="social-name">LinkedIn</span>
+                                <span class="social-handle">charan-kumar-g</span>
+                            </div>
+                            <svg class="social-arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 2.5H11.5V11.5M11.5 2.5L2.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                         </a>
-                        <a href="https://github.com/charankumar-g" target="_blank" class="social-link">
-                            <img src="images/github.png" alt="GitHub">
-                            <span>GitHub</span>
+                        <a href="https://github.com/charankumar-g" target="_blank" class="social-card">
+                            <div class="social-icon-box">
+                                <img src="images/github.png" alt="GitHub">
+                            </div>
+                            <div class="social-text">
+                                <span class="social-name">GitHub</span>
+                                <span class="social-handle">charankumar-g</span>
+                            </div>
+                            <svg class="social-arr" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 2.5H11.5V11.5M11.5 2.5L2.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <span>© 2025 Charan Kumar G</span>
-                <span class="footer-credit">Designed & Developed with <span class="heart">♥</span> by <strong>Charan</strong></span>
+                <span>Crafted with precision by <strong>Charan</strong></span>
             </div>
         </div>
     </footer>
@@ -310,4 +285,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
