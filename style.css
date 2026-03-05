@@ -238,7 +238,7 @@ a { text-decoration: none; }
     border: 1px solid rgba(56,189,248,0.2);
     padding: 7px 18px;
     border-radius: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 12px;
 }
 .chip-dot {
     width: 6px; height: 6px;
@@ -246,6 +246,25 @@ a { text-decoration: none; }
     border-radius: 50%;
     box-shadow: 0 0 8px var(--accent);
 }
+
+/* Learning badge */
+.hero-learning {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--t-secondary);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    letter-spacing: 0.01em;
+    transition: border-color .3s;
+}
+.hero-learning:hover { border-color: var(--border-md); }
+.learn-icon { font-size: 0.75rem; }
 
 /* Title */
 .hero-title {
