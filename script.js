@@ -1,23 +1,15 @@
-/* ================================================================
-   CHARAN KUMAR G — PORTFOLIO SCRIPTS
-   ================================================================ */
 (function () {
     'use strict';
 
-    /* Page is always visible — opacity controlled via CSS only */
-
-    /* ── NAV ── */
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    /* ── SCROLL ARROW ── */
     document.getElementById('scrollArrow')?.addEventListener('click', () => {
         document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
     });
 
-    /* ── SMOOTH ANCHORS ── */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             const t = document.querySelector(a.getAttribute('href'));
@@ -28,7 +20,6 @@
         });
     });
 
-    /* ── HERO REVEAL ── */
     const heroReveal = () => {
         document.querySelectorAll('.hero .reveal').forEach(el => {
             setTimeout(() => el.classList.add('visible'),
@@ -39,7 +30,6 @@
         ? document.addEventListener('DOMContentLoaded', heroReveal)
         : heroReveal();
 
-    /* ── INTERSECTION REVEAL ── */
     const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -52,7 +42,6 @@
 
     document.querySelectorAll('.sec-head .reveal, .footer .reveal').forEach(el => io.observe(el));
 
-    // Section header
     const secHead = document.querySelector('.sec-head');
     if (secHead) {
         const secIO = new IntersectionObserver(entries => {
@@ -64,7 +53,6 @@
         secIO.observe(secHead);
     }
 
-    /* ── CARD STAGGER ── */
     const cardIO = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -78,7 +66,6 @@
 
     document.querySelectorAll('.card-row, .card-wide').forEach(el => cardIO.observe(el));
 
-    // Also observe solo featured cards
     document.querySelectorAll('.card.card-wide.reveal-card').forEach(card => {
         const solo = new IntersectionObserver(entries => {
             entries.forEach(e => {
@@ -88,7 +75,6 @@
         solo.observe(card);
     });
 
-    /* ── CARD TILT ── */
     document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const r = card.getBoundingClientRect();
@@ -99,7 +85,6 @@
         card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
 
-    /* ── CURSOR ── */
     if (window.matchMedia('(pointer: fine)').matches) {
         const cur  = document.getElementById('cursor');
         const ring = document.getElementById('cursorRing');
