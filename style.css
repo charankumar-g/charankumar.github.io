@@ -1,49 +1,36 @@
-/* ================================================================
-   CHARAN KUMAR G — PREMIUM BALANCED PORTFOLIO
-   Theme: Deep Charcoal + Teal/Cyan Accent — Professional & Modern
-   Font: Plus Jakarta Sans — clean, modern, widely loved
-   ================================================================ */
-
 :root {
-    /* Background layers — deep charcoal, NOT pure black */
-    --bg-base:      #111318;   /* Main bg */
-    --bg-card:      #16181f;   /* Card bg */
-    --bg-card-2:    #1c1f28;   /* Hover card bg */
-    --bg-surface:   #1e2130;   /* Elevated surfaces */
+
+    --bg-base:      #111318;
+    --bg-card:      #16181f;
+    --bg-card-2:    #1c1f28;
+    --bg-surface:   #1e2130;
     --bg-nav:       rgba(17,19,24,0.85);
 
-    /* Borders */
     --border:       rgba(255,255,255,0.07);
     --border-md:    rgba(255,255,255,0.12);
     --border-hi:    rgba(255,255,255,0.18);
 
-    /* Text */
     --t-primary:    #eef0f6;
     --t-secondary:  #8b92a8;
     --t-muted:      #555d72;
 
-    /* Accent — vibrant teal/cyan, premium feel */
-    --accent:       #38bdf8;      /* Sky blue */
-    --accent-2:     #818cf8;      /* Soft indigo */
-    --accent-3:     #fb923c;      /* Warm orange for warmth */
+    --accent:       #38bdf8;
+    --accent-2:     #818cf8;
+    --accent-3:     #fb923c;
     --accent-glow:  rgba(56,189,248,0.18);
     --accent-glow2: rgba(129,140,248,0.15);
 
-    /* Gradient */
     --grad-accent:  linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #fb923c 100%);
     --grad-subtle:  linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(129,140,248,0.05) 100%);
     --grad-card:    linear-gradient(135deg, rgba(56,189,248,0.04) 0%, rgba(129,140,248,0.03) 100%);
 
-    /* Font */
     --font: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-    /* Radii */
     --r-sm:  8px;
     --r-md:  14px;
     --r-lg:  20px;
     --r-xl:  28px;
 
-    /* Shadows */
     --s-sm:    0 2px 12px rgba(0,0,0,0.3);
     --s-md:    0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.04) inset;
     --s-lg:    0 20px 60px rgba(0,0,0,0.5);
@@ -54,7 +41,6 @@
     --t: 0.4s var(--ease);
 }
 
-/* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
@@ -73,7 +59,6 @@ a { text-decoration: none; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; opacity: 0.4; }
 
-/* ── CURSOR ── */
 .cursor {
     position: fixed;
     width: 9px; height: 9px;
@@ -98,7 +83,6 @@ a { text-decoration: none; }
 .cursor.big { width: 15px; height: 15px; }
 .cursor-ring.big { width: 54px; height: 54px; border-color: rgba(56,189,248,0.2); }
 
-/* ── NAV ── */
 .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -163,7 +147,6 @@ a { text-decoration: none; }
 }
 @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(.85); } }
 
-/* ── HERO ── */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -175,7 +158,6 @@ a { text-decoration: none; }
     overflow: hidden;
 }
 
-/* Ambient orbs */
 .hero-ambient { position: absolute; inset: 0; pointer-events: none; }
 .amb {
     position: absolute;
@@ -206,7 +188,6 @@ a { text-decoration: none; }
     100% { transform: translate(25px,-35px) scale(1.07); }
 }
 
-/* Grid lines */
 .hero-grid {
     position: absolute; inset: 0;
     background-image:
@@ -224,7 +205,6 @@ a { text-decoration: none; }
     text-align: center;
 }
 
-/* Chip */
 .hero-chip {
     display: inline-flex;
     align-items: center;
@@ -247,7 +227,6 @@ a { text-decoration: none; }
     box-shadow: 0 0 8px var(--accent);
 }
 
-/* Learning badge */
 .hero-learning {
     display: inline-flex;
     align-items: center;
@@ -266,7 +245,6 @@ a { text-decoration: none; }
 .hero-learning:hover { border-color: var(--border-md); }
 .learn-icon { font-size: 0.75rem; }
 
-/* Title */
 .hero-title {
     font-size: clamp(2.8rem, 6.5vw, 5.8rem);
     font-weight: 800;
@@ -297,7 +275,6 @@ a { text-decoration: none; }
 }
 @keyframes gradAnim { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
 
-/* Desc */
 .hero-desc {
     font-size: 1.05rem;
     font-weight: 300;
@@ -307,7 +284,6 @@ a { text-decoration: none; }
     line-height: 1.8;
 }
 
-/* Buttons */
 .hero-btns {
     display: flex;
     justify-content: center;
@@ -355,7 +331,6 @@ a { text-decoration: none; }
     transform: translateY(-2px);
 }
 
-/* Stats */
 .hero-stats {
     display: inline-flex;
     align-items: center;
@@ -392,7 +367,6 @@ a { text-decoration: none; }
     background: var(--border);
 }
 
-/* Scroll hint */
 .scroll-hint {
     position: absolute;
     bottom: 36px; left: 50%;
@@ -426,7 +400,6 @@ a { text-decoration: none; }
     100% { top: 50px;  opacity: 0; }
 }
 
-/* ── TICKER ── */
 .ticker-bar {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -456,7 +429,6 @@ a { text-decoration: none; }
 }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* ── PROJECTS SECTION ── */
 .projects { padding: 110px 0 80px; }
 .projects-inner {
     max-width: 1160px;
@@ -464,7 +436,6 @@ a { text-decoration: none; }
     padding: 0 48px;
 }
 
-/* Section header */
 .sec-head { margin-bottom: 64px; }
 .sec-label {
     font-size: 0.74rem;
@@ -500,7 +471,6 @@ a { text-decoration: none; }
     line-height: 1.75;
 }
 
-/* ── CARDS ── */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -528,7 +498,6 @@ a { text-decoration: none; }
 }
 .card:hover::before { opacity: 1; }
 
-/* Wide (featured) card */
 .card-wide {
     display: grid;
     grid-template-columns: 54% 46%;
@@ -538,7 +507,6 @@ a { text-decoration: none; }
 .card-rev .card-img-box { order: 2; }
 .card-rev .card-info    { order: 1; }
 
-/* Image box */
 .card-img-box {
     position: relative;
     overflow: hidden;
@@ -560,7 +528,6 @@ a { text-decoration: none; }
     filter: saturate(1.05) brightness(1);
 }
 
-/* Glass overlay */
 .card-glass-overlay {
     position: absolute; inset: 0;
     background: rgba(17,19,24,0.55);
@@ -585,7 +552,6 @@ a { text-decoration: none; }
 .card:hover .glass-btn { transform: translateY(0); }
 .glass-btn:hover { background: #fff; }
 
-/* Card info */
 .card-info {
     position: relative;
     z-index: 1;
@@ -596,7 +562,6 @@ a { text-decoration: none; }
 }
 .card-wide .card-info { padding: 44px 48px; }
 
-/* Chips */
 .card-chips {
     display: flex;
     flex-wrap: wrap;
@@ -615,7 +580,6 @@ a { text-decoration: none; }
     border-radius: 100px;
 }
 
-/* Card title */
 .card-title {
     font-size: 1.15rem;
     font-weight: 700;
@@ -626,7 +590,6 @@ a { text-decoration: none; }
 }
 .card-wide .card-title { font-size: 1.55rem; }
 
-/* Card text */
 .card-text {
     font-size: 0.9rem;
     font-weight: 300;
@@ -636,7 +599,6 @@ a { text-decoration: none; }
 }
 .card-wide .card-text { font-size: 0.96rem; }
 
-/* Card CTA */
 .card-cta {
     display: inline-flex;
     align-items: center;
@@ -661,7 +623,6 @@ a { text-decoration: none; }
 .card:hover .card-cta { color: var(--accent); gap: 12px; }
 .card:hover .card-cta::after { width: 100%; }
 
-/* Grid rows */
 .card-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -670,7 +631,6 @@ a { text-decoration: none; }
 }
 .card-row .card { margin-bottom: 0; }
 
-/* ── REVEAL ANIMATIONS ── */
 .reveal {
     opacity: 0;
     transform: translateY(22px);
@@ -685,7 +645,6 @@ a { text-decoration: none; }
 }
 .reveal-card.visible { opacity: 1; transform: translateY(0); }
 
-/* ── FOOTER ── */
 .footer {
     background: #0c0e14;
     border-top: 1px solid var(--border);
@@ -808,7 +767,6 @@ a { text-decoration: none; }
 }
 .footer-bottom strong { color: var(--accent); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 960px) {
     .card-wide { grid-template-columns: 1fr; }
     .card-wide .card-img-box { height: 260px; min-height: unset; }
