@@ -4,12 +4,7 @@
 (function () {
     'use strict';
 
-    /* ── SAFE PAGE REVEAL ── */
-    document.documentElement.style.opacity = '0';
-    document.documentElement.style.transition = 'opacity 0.5s ease';
-    const show = () => { document.documentElement.style.opacity = '1'; };
-    window.addEventListener('load', show);
-    setTimeout(show, 1200);
+    /* Page is always visible — opacity controlled via CSS only */
 
     /* ── NAV ── */
     const nav = document.getElementById('nav');
