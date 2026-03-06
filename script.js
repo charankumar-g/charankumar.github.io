@@ -22,8 +22,11 @@
 
     const heroReveal = () => {
         document.querySelectorAll('.hero .reveal').forEach(el => {
-            setTimeout(() => el.classList.add('visible'),
-                parseInt(el.dataset.delay || 0) + 200);
+            el.classList.add('animate-ready');
+            setTimeout(() => {
+                el.classList.remove('animate-ready');
+                el.classList.add('visible');
+            }, parseInt(el.dataset.delay || 0) + 100);
         });
     };
     document.readyState === 'loading'
@@ -49,7 +52,7 @@
                 if (e.isIntersecting) { e.target.classList.add('visible'); secIO.unobserve(e.target); }
             });
         }, { threshold: 0.1 });
-        secHead.classList.add('reveal');
+        secHead.classList.add('reveal', 'animate-ready');
         secIO.observe(secHead);
     }
 
