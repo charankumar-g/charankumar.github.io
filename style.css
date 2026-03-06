@@ -632,9 +632,13 @@ a { text-decoration: none; }
 .card-row .card { margin-bottom: 0; }
 
 .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .65s var(--ease), transform .65s var(--ease);
+}
+.reveal.animate-ready {
     opacity: 0;
     transform: translateY(22px);
-    transition: opacity .65s var(--ease), transform .65s var(--ease);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
