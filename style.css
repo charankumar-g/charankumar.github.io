@@ -643,8 +643,8 @@ a { text-decoration: none; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 .reveal-card {
-    opacity: 0;
-    transform: translateY(32px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity .65s var(--ease), transform .65s var(--ease);
 }
 .reveal-card.visible { opacity: 1; transform: translateY(0); }
